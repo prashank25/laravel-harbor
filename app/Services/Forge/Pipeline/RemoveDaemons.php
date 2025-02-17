@@ -43,7 +43,7 @@ class RemoveDaemons
             // If a daemon can be detected as being one that was configured by us.
             if ($this->daemonWasAddedForThisSite($daemon, $service->setting)) {
                 $service->forge->deleteDaemon($service->server->id, $daemon->id);
-                $this->information("--> Deleted site specific daemon: {$daemon->command}");
+                $this->information("--> Deleted daemon created with site: {$daemon->command}");
             }
         }
 
