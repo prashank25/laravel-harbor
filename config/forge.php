@@ -70,6 +70,9 @@ return [
     // Flag to enable SSL certification (default: false).
     'ssl_required' => env('FORGE_SSL_REQUIRED', false),
 
+    // ID of the certificate to be cloned onto new site's domain.
+    'ssl_clone_cert' => env('FORGE_SSL_CLONE_CERT'),
+
     // Flag to pause until SSL setup completes during provisioning (default: true).
     'wait_on_ssl' => env('FORGE_WAIT_ON_SSL', true),
 

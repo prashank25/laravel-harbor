@@ -145,6 +145,11 @@ class ForgeSetting
     public bool $sslRequired;
 
     /**
+     * ID of the certificate to clone on the site.
+     */
+    public ?string $sslCloneCert;
+
+    /**
      * Flag to pause until site deployment completes during provisioning.
      */
     public bool $waitOnDeploy;
@@ -261,6 +266,7 @@ class ForgeSetting
             'db_name' => ['nullable', 'string'],
             'auto_source_required' => ['boolean'],
             'ssl_required' => ['boolean'],
+            'ssl_clone_cert' => ['nullable', 'string'],
             'wait_on_ssl' => ['boolean'],
             'wait_on_deploy' => ['boolean'],
             'timeout_seconds' => ['required', 'int', 'min:0'],
