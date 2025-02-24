@@ -21,6 +21,7 @@ use App\Services\Forge\Pipeline\RemoveDaemons;
 use App\Services\Forge\Pipeline\RemoveDatabaseUser;
 use App\Services\Forge\Pipeline\RemoveExistingDeployKey;
 use App\Services\Forge\Pipeline\RemoveInertiaSupport;
+use App\Services\Forge\Pipeline\RemoveTaskScheduler;
 use App\Services\Forge\Pipeline\RunOptionalCommands;
 use App\Traits\Outputifier;
 use Illuminate\Support\Facades\Pipeline;
@@ -44,6 +45,7 @@ class TearDownCommand extends Command
                 RunOptionalCommands::class,
                 RemoveDatabaseUser::class,
                 RemoveExistingDeployKey::class,
+                RemoveTaskScheduler::class,
                 RemoveDaemons::class,
                 DestroySite::class,
             ])
