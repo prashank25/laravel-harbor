@@ -15,6 +15,7 @@ namespace App\Commands;
 
 use App\Services\Forge\ForgeService;
 use App\Services\Forge\Pipeline\AnnounceSiteOnSlack;
+use App\Services\Forge\Pipeline\CloneExistingSslCertificate;
 use App\Services\Forge\Pipeline\CreateDaemons;
 use App\Services\Forge\Pipeline\CreateDatabase;
 use App\Services\Forge\Pipeline\CreateQueueWorkers;
@@ -56,6 +57,7 @@ class ProvisionCommand extends Command
                 CreateDatabase::class,
                 InstallGitRepository::class,
                 ObtainLetsEncryptCertification::class,
+                CloneExistingSslCertificate::class,
                 EnableQuickDeploy::class,
                 UpdateEnvironmentVariables::class,
                 UpdateDeployScript::class,
