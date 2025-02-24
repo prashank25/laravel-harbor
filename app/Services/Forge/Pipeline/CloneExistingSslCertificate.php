@@ -28,14 +28,20 @@ class CloneExistingSslCertificate
         }
 
         $this->information('Cloning existing SSL certificate.');
-
-        $service->forge->createCertificate(
+        $cloned = $service->forge->createCertificate(
             $service->server->id,
             $service->site->id,
             [
                 'type' => 'clone',
                 'certificate_id' => $service->setting->sslCloneCert,
             ],
+        );
+
+        $this->information('Activating cloned SSL certificate.');
+        $service->forge->activateCertificate(
+            $service->server->id,
+            $service->site->id,
+            $cloned->id
         );
 
         return $next($service);
