@@ -23,6 +23,8 @@ class DestroySite
 
     public function __invoke(ForgeService $service, Closure $next)
     {
+        sleep(10);
+        
         $service->site->delete();
 
         return $next($service);
